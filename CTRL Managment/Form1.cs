@@ -12,6 +12,25 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace CTRL_Managment
 {
+     class User
+    {
+        public string name;
+        public string pass;
+        public string email;
+        public string Username;
+        public string gender;
+        public string DOB;
+        public  User(string _name , string _pass, string _email, string _username, string _gender, string _dob)
+        {
+            name = _name;
+            pass = _pass;
+            email = _email;
+            Username = _username;
+            gender = _gender;
+            DOB = _dob;
+        }
+    } 
+
     public partial class login_form : KryptonForm
     {
         SqlConnection con;
@@ -80,14 +99,7 @@ namespace CTRL_Managment
         private void kryptonLinkLabel1_LinkClicked(object sender, EventArgs e)
         {
             MessageBox.Show("\t\t Teem Members: \t\t\n\t------------------------------------\t" +
-                "\n\t    Mohamed Ebrahim \t" +
-                "\n\t    Mohamed Emara \t" +
-                "\n\t    Mohamed Selim \t" +
-                "\n\t    Mohamed Abo Alasrar \t" +
-                "\n\t    Ahmed Abd Elbaset\t" +
-                "\n\t    Abdelmohaymn elbeshier\t" +
-                "\n\t    Kareem Khalaf\t" +
-                "\n\t    Abdelrahman Elsayed\t");
+                "\n\t    Kareem Khalaf\t");
         }
 
         private void kryptonButton2_Click(object sender, EventArgs e)
@@ -99,6 +111,7 @@ namespace CTRL_Managment
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            
             Username = kryptonTextBox1.Text;
             pass = kryptonTextBox2.Text;
             if (kryptonComboBox1.Text=="Employee")
@@ -108,15 +121,14 @@ namespace CTRL_Managment
                 {
                     if (r["UserName"].ToString() == Username && r["Pass_word"].ToString() == pass)
                     {
-                        
-                        
+
                         Employee employee = new Employee();
-                        employee.email = r["Email"].ToString();
-                        employee.DOB = r["DoB"].ToString();
-                        employee.email = r["Email"].ToString();
-                        employee.name = r["Fullname"].ToString();
-                        employee.gender = r["Gender"].ToString();
-                        employee.Username = Username;
+                        string email = r["Email"].ToString();
+                        string DOB = r["DoB"].ToString();
+                        string name = r["Fullname"].ToString();
+                        string gender = r["Gender"].ToString();
+                        employee.empUser = new User(name, pass, email, Username, gender, DOB);
+                        
                         employee.Show();
                         this.Hide();
                        // MessageBox.Show("LogIn successfully \n" );
@@ -143,12 +155,11 @@ namespace CTRL_Managment
                     if (r["UserName"].ToString() == Username && r["Pass_word"].ToString() == pass)
                     {
                         manager_form manager_ = new manager_form();
-                        manager_.email = r["Email"].ToString();
-                        manager_.DOB = r["DoB"].ToString();
-                        manager_.email = r["Email"].ToString();
-                        manager_.name = r["Fullname"].ToString();
-                        manager_.gender = r["Gender"].ToString();
-                        manager_.Username = Username;
+                        string email = r["Email"].ToString();
+                        string DOB = r["DoB"].ToString();
+                        string name = r["Fullname"].ToString();
+                        string gender = r["Gender"].ToString();
+                        manager_.mangerUser = new User(name, pass, email, Username, gender, DOB);
                         manager_.Show();
                         this.Hide();
                     

@@ -18,12 +18,8 @@ namespace CTRL_Managment
             InitializeComponent();
         }
         int counter_of_tasks = 4;
-        public string name;
-        public string pass;
-        public string email;
-        public string Username;
-        public string gender;
-        public string DOB;
+        internal User mangerUser;
+
         private void manager_form_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'managmentDataSet1.customer' table. You can move, or remove it, as needed.
@@ -60,11 +56,11 @@ namespace CTRL_Managment
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
             selection_panel.Top = profile_btn.Top;
-            profile1.email = email;
-            profile1.name = name;
-            profile1.DOB = DOB;
-            profile1.gender = gender;
-            profile1.Username = Username;
+            profile1.email = mangerUser.email;
+            profile1.name = mangerUser.name;
+            profile1.DOB = mangerUser.DOB;
+            profile1.gender = mangerUser.gender;
+            profile1.Username = mangerUser.Username;
             profile1.Dock = DockStyle.Fill;
             profile1.Visible = true;
             profile1.BringToFront();

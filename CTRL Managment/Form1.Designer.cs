@@ -259,16 +259,7 @@ namespace CTRL_Managment
             this.warning.TabIndex = 7;
             this.warning.Text = "*Username or password are not correct";
             this.warning.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(116, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+        
             // 
             // Exit
             // 
@@ -322,6 +313,17 @@ namespace CTRL_Managment
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            // 
+            // pictureBox1
+            // 
+            login_form login_form = this;
+            login_form.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("Resources/logoName.png")));
+            this.pictureBox1.Location = new System.Drawing.Point(116, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(207, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
 
         }
 

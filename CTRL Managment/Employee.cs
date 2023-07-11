@@ -17,12 +17,8 @@ namespace CTRL_Managment
         {
             InitializeComponent();
         }
-        public string name;
-        public string pass;
-        public string email;
-        public string Username;
-        public string gender;
-        public string DOB;
+        internal User empUser;
+      
         private void Employee_Load(object sender, EventArgs e)
         {
             
@@ -59,7 +55,7 @@ namespace CTRL_Managment
         {
             selection_panel.Top = sales_btn.Top;
             label1.Text = "Sales";
-            sales_user1.name = name;
+            sales_user1.name = empUser.name;
             sales_user1.Dock = DockStyle.Fill;
             sales_user1.BringToFront();
             profile1.Visible = false;
@@ -70,11 +66,11 @@ namespace CTRL_Managment
         {
             selection_panel.Top = profile_btn.Top;
             label1.Text = "Profile";
-            profile1.email = email;
-            profile1.name = name;
-            profile1.DOB = DOB;
-            profile1.gender = gender;
-            profile1.Username = Username;
+            profile1.email = empUser.email;
+            profile1.name = empUser.name;
+            profile1.DOB = empUser.DOB;
+            profile1.gender = empUser.gender;
+            profile1.Username = empUser.Username;
             
             profile1.Dock = DockStyle.Fill;
             profile1.BringToFront();
@@ -86,7 +82,7 @@ namespace CTRL_Managment
         {
             selection_panel.Top = sales_btn.Top;
             label1.Text = "Sales";
-            sales_user1.name = name;
+            sales_user1.name = empUser.name;
             sales_user1.Dock = DockStyle.Fill;
             sales_user1.BringToFront();
             profile1.Visible = false;

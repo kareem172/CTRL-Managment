@@ -72,6 +72,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Form1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Home_frm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +138,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Home_frm.resx">
       <DependentUpon>Home_frm.cs</DependentUpon>
@@ -213,6 +220,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Praveen-Minimal-Outline-Back-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoName.png" />
+    <Content Include="Resources\pictureBox1.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
